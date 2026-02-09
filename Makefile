@@ -16,7 +16,7 @@ SRC +=	modules/algorithms/common/algorithms_utils.c		\
 OBJ =	$(SRC:.c=.o)
 
 INC =	-I./include
-CFLAGS =-Wall -Wextra -Werror
+CFLAGS =-g -Wall -Wextra -Werror
 CC =	cc
 NAME =	push_swap
 LIBFT =	libft/libft.a
@@ -27,17 +27,16 @@ $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(OBJ) $(LIBFT) -o $(NAME)
 
 %.o: %.c
-	$(CC) -g $(CFLAGS) $(INC) -c $^ -o $@
+	$(CC) $(CFLAGS) $(INC) -c $^ -o $@
 
 $(LIBFT):
 	cd libft && make all
 
 clean:
-	cd libft && make clean
+	cd libft && make fclean
 	rm -f $(OBJ)
 
 fclean: clean
-	cd libft && make fclean
 	rm -f $(NAME)
 
 re: fclean all

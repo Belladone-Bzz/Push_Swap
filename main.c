@@ -13,6 +13,6 @@ int	main(int argc, char *argv[])
 			error_flag = push_swap(parsed_data);
 	}
 	if (error_flag != NO_ERR)
-		ft_printf("Error\n");
+		ft_fprintf(2, "Error\n");
 	return (error_flag);
 }

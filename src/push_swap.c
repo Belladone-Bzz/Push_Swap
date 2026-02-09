@@ -24,7 +24,7 @@ static void	benching(t_push_swap_data ps_data,
 	ft_fprintf(2, "[bench] total_ops: %lld\n", ps_data.number_of_operations);
 	ft_fprintf(2, "[bench] sa: %lld sb: %lld ss: %lld pa: %lld pb: %lld\n",
 		ops[0], ops[3], ops[6], ops[9], ops[10]);
-	ft_fprintf(2, "[bench] ra: %lld rb: %lld", ops[1], ops[4]);
+	ft_fprintf(2, "[bench] ra: %lld rb: %lld ", ops[1], ops[4]);
 	ft_fprintf(2, "rr: %lld rra: %lld rrb: %lld rrr: %lld\n",
 		ops[7], ops[2], ops[5], ops[8]);
 }
