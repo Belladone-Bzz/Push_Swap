@@ -12,8 +12,6 @@ int	main(int argc, char *argv[])
 		if (error_flag == NO_ERR)
 			error_flag = push_swap(parsed_data);
 	}
-	else
-		error_flag = MISSING_ARG_ERR;
 	if (error_flag != NO_ERR)
 		ft_printf("Error\n");
 	return (error_flag);
