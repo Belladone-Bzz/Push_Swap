@@ -33,15 +33,15 @@ The flags recognized by the program are as follows: `--bench`, `--simple`, `--me
 
 An error message will be returned by the program if the user enters a flag that is not in the list, two identical flags, or two flags that allow an algorithm to be selected.
 
-If no flag has been set, the program will assume that the user does not want a benchmark, and will set the algorithm to “adaptive”. This adaptive algorithm flag adapts the choice of algorithm used depending on the disorder for the given list of values :
-- Simple for a disorder between 0% and 20%
-- Medium for a disorder between 20% and 50%
-- Complex for a disorder between 50% and 100%
-
+If no flag has been set, the program will assume that the user does not want a benchmark, and will set the algorithm to “adaptive”. This adaptive algorithm flag adapts the choice of algorithm used depending on the disorder.
 #### Values : 
 Regarding int values, they must therefore be entered by the user after the flags, if they are present. The program accepts either a single argument containing all int values separated only by spaces, or one argument per int value.
 
 An error message will be returned if the above condition is not met, if anything other than a numeric value, a "+" or "-" sign is entered, or if an int value appears more than once in the input list.
+
+This part also calculates the disorder which is a percentage between 0% and 100% that tells how far the initial stack_a is from being sorted. If the numbers are already in the right order, the disorder is 0. If they are in the worst
+possible order, the disorder is 100%. Anything in between means the stack is partly sorted, but still messy.
+To calculate it, we look at all the possible pairs of numbers in the stack. Each time a bigger number appears before a smaller one, that pair counts as a mistake. The more mistakes we have, the closer the disorder is to 100%.
 
 #### Output at the end of parsing :
 If no errors are detected in the user's command, all of the integer values entered by the user will be placed in a linked list and can then be processed by one of our algorithms in order to be sorted in ascending order.
@@ -87,6 +87,15 @@ Our medium algorithm consists of dividing all the values into a number of √n c
 
 #### Complex algorithm (complexity O(n log n))
 For the complex algorithm, we used a binary-based radix sort. By adding all the values to a temporary array and sorting them on the back-end, we recover their end-position index, which helps reduce the runtime of the sorting. Bit by bit, from right to left, any that's equal to 0 is push to the second stack, then all are grouped back to the first stack. By looping every bit, all the values are sorted with more and more precision. This algorithm is the most efficient for a high number of values, but will often result in the same amount of operations.
+
+#### Adaptive algorithm
+The adaptive algorithm choose the better strategy to sort values in the initial stack_a.
+- If the list size is below 10, the simple algorithm is used.
+- If the list size is between 10 and 100, the medium algorithm is used.
+- If the list size is above 100 :
+	- If the disorder is below 8%, the simple algorithm is used.
+ 	- If the disorder is between 8% and 44%, the medium algorithm is used.
+ 	- If the disorder is above 44%, the complex algorithm is used.
 
 ## Project's structure
 
