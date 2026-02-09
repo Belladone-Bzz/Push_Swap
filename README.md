@@ -15,7 +15,19 @@ This project allowed us to greatly improve the following skills:
 
 ## Instructions
 
-To compile the project, run the `make all` command in a terminal in the root folder. To execute it, you can call the `push_swap` executable file and append it with your desired flags and arguments, like so :
+To use our Push_Swap program, clone the directory with the command `git clone --recurse-submodules https://github.com/Belladone-Bzz/Push_Swap.git` in the terminal. This will download all of the project's files as well as initiate the additional libft repository. When done, go in the directory with the command `cd Push_Swap`.
+
+The project includes a **Makefile** with the following rules:
+
+```
+make        # Compiles the project and creates push_swap executable
+make all    # Same as above
+make clean  # Removes object files
+make fclean # Removes all generated files including executable
+make re     # Recompiles the entire project from scratch
+```
+
+All source files are compiled with : `-Wall -Wextra -Werror` flags for strict error checking. To compile the project, run the `make` command in the terminal. To execute it, you can call the `push_swap` executable file and append it with your desired flags and arguments, like so :
 
 `./push_swap --medium --bench 3 2 1 4 5 6`
 
