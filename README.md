@@ -46,6 +46,7 @@ The flags recognized by the program are as follows: `--bench`, `--simple`, `--me
 An error message will be returned by the program if the user enters a flag that is not in the list, two identical flags, or two flags that allow an algorithm to be selected.
 
 If no flag has been set, the program will assume that the user does not want a benchmark, and will set the algorithm to “adaptive”. This adaptive algorithm flag adapts the choice of algorithm used depending on the disorder.
+
 #### Values : 
 Regarding int values, they must therefore be entered by the user after the flags, if they are present. The program accepts either a single argument containing all int values separated only by spaces, or one argument per int value.
 
