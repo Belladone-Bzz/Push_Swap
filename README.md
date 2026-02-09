@@ -15,7 +15,13 @@ This project allowed us to greatly improve the following skills:
 
 ## Instructions
 
-To use our Push_Swap program, clone the directory with the command `git clone --recurse-submodules https://github.com/Belladone-Bzz/Push_Swap.git` in the terminal. This will download all of the project's files as well as initiate the additional libft repository. When done, go in the directory with the command `cd Push_Swap`.
+To use our Push_Swap program, clone the directory with the command :
+
+```
+git clone --recurse-submodules https://github.com/Belladone-Bzz/Push_Swap.git
+```
+
+This will download all of the project's files as well as initiate the additional libft repository. When done, go in the directory with the command `cd Push_Swap`.
 
 The project includes a **Makefile** with the following rules:
 
